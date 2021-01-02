@@ -60,7 +60,8 @@
 							<div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form ">
 								<div class="container-fluid">
 									<div class="row row-sm">
-										<div class="card-body mt-2 mb-2">
+                                        
+                                        <div class="card-body mt-2 mb-2">
 											<img src="../../assets/img/brand/logo.png" class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
 											<div class="clearfix"></div>
                                             <form  method="POST" action="{{ route('login') }}">
