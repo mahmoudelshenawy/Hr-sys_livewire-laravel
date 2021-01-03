@@ -20,6 +20,11 @@
     <link href="{{ asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/plugins/web-fonts/plugin.css') }}" rel="stylesheet"/>
 
+    <!-- Internal DataTables css-->
+		<link href="{{ asset('assets/plugins/datatable/dataTables.bootstrap4.min-rtl.css') }}" rel="stylesheet" />
+		<link href="{{ asset('assets/plugins/datatable/responsivebootstrap4.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css') }}" rel="stylesheet" />
+        
     @if (lang() == 'ar')
          <!-- Style css-->
     <link href="{{ asset('assets/css-rtl/style.css') }}" rel="stylesheet">
@@ -46,5 +51,6 @@
 
     <!-- Mutipleselect css-->
     <link rel="stylesheet" href="{{ asset('assets/plugins/multipleselect/multiple-select.css') }}">
-
+<!-- InternalFileupload css-->
+<link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css"/>
 </head>
