@@ -42,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $appends = [
+        'allPermissions',
+    ];
+
+    public function getAllPermissionsAttribute()
+    {
+        return $this->allPermissions();
+    }
 }

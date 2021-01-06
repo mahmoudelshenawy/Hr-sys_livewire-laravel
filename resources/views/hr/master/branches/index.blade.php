@@ -7,36 +7,44 @@
             <div class="card custom-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3">
-                        <h6 class="main-content-label mb-1">Manage Users</h6>
-                        <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEditUser">Add New User</a>
-                        @include('users.add')
+                        <h6 class="main-content-label mb-1">Manage Branches</h6>
+                        <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEditBranch">Add New Branch</a>
+                        @include('hr.master.branches.add')
                     </div>
                     <div class="table-responsive">
                         <table id="exportexample" class="table table-striped table-bordered text-nowrap" >
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>code</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
+                                    <th>address</th>
+                                    <th>country</th>
+                                    {{-- <th>phone</th>
+                                    <th>email</th> --}}
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                          @foreach ($users as $user)
+                          @foreach ($branches as $branch)
                               <tr>
-                                  <td>{{$user->id}}</td>
-                                  <td>{{$user->name}}</td>
-                                  <td>{{$user->email}}</td>
-                                  <td>{{$user->roles[0]->display_name ?? 'No Role'}}</td>
+                                  <td>{{$branch->code}}</td>
+                                  <td>{{$branch->name}}</td>
+                                  <td>{{$branch->address}}</td>
+                                  <td>{{$branch->country}}</td>
+                                  {{-- <td>{{$branch->phone ?? ''}}</td>
+                                  <td>{{$branch->email ??''}}</td> --}}
                                   <td class="d-flex justify-content-center">
-                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#EditUser_{{$user->id}}">
+                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#Editbranch_{{$branch->code}}">
                                         <i class="fe fe-edit-2 text-primary mr-4" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
                                     </a>
+                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#deleteBranch_{{$branch->code}}">
                                     <i class="fe fe-trash-2 text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </a>
                                   </td>
+                                 
                               </tr>
-                              @include('users.edit')
+                              @include('hr.master.branches.edit')
+                              @include('hr.master.branches.delete')
                           @endforeach
                         </tbody>
                         </table>

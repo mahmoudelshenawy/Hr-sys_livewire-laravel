@@ -16,7 +16,7 @@ class CreateAppSettingsTable extends Migration
         Schema::create('app_settings', function (Blueprint $table) {
             $table->id();
             $table->enum('nav_direction', ['hor', 'vert'])->default('hor');
-            $table->enum('lang', ['ar', 'en'])->default('ar');
+            $table->enum('lang', ['ar', 'en'])->default('en');
             $table->string('timezone')->default('UTC');
             $table->string('company_name')->nullable();
             $table->string('logo')->nullable();

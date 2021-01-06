@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AppSetting;
+use App\Http\Controllers\services\Upload;
+use Illuminate\Support\Facades\Storage;
 
 class AppSettingsController extends Controller
 {
@@ -22,16 +24,29 @@ class AppSettingsController extends Controller
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'logo' => 'image|mimes:jpg,jpeg,png'
+        ]);
+
+        $setting = AppSetting::where('id', '=', 1)->first();
+
+        if (request()->hasFile('logo')) {
+            $extension = $request->logo->extension();
+            $name = time();
+            if ($setting->logo !== null) {
+                Storage::delete($setting->logo);
+            }
+            $request->logo->storeAs('/public/logo', $name . "." . $extension);
+
+            $url = Storage::url('public/logo/' . $name . "." . $extension);
+
+            $setting->logo = $url;
+        }
+
+        $setting->update();
+        return back();
     }
 
     /**

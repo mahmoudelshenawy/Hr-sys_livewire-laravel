@@ -24,6 +24,9 @@
 		<link href="{{ asset('assets/plugins/datatable/dataTables.bootstrap4.min-rtl.css') }}" rel="stylesheet" />
 		<link href="{{ asset('assets/plugins/datatable/responsivebootstrap4.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css') }}" rel="stylesheet" />
+
+        @livewireStyles
+        @livewireScripts
         
     @if (lang() == 'ar')
          <!-- Style css-->
@@ -53,4 +56,14 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/multipleselect/multiple-select.css') }}">
 <!-- InternalFileupload css-->
 <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css"/>
+
+<style>
+    div.dataTables_wrapper div.dataTables_filter{
+        float: right;
+    }
+    .dt-buttons, .btn-group{
+margin-bottom: 20px
+    }
+</style>
+
 </head>

@@ -7,36 +7,36 @@
             <div class="card custom-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3">
-                        <h6 class="main-content-label mb-1">Manage Users</h6>
-                        <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEditUser">Add New User</a>
-                        @include('users.add')
+                        <h6 class="main-content-label mb-1">Manage Administration</h6>
+                        <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEditBranch">Add New Administration</a>
+                        @include('hr.master.administrations.add')
                     </div>
                     <div class="table-responsive">
                         <table id="exportexample" class="table table-striped table-bordered text-nowrap" >
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>code</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                          @foreach ($users as $user)
+                          @foreach ($administrations as $adm)
                               <tr>
-                                  <td>{{$user->id}}</td>
-                                  <td>{{$user->name}}</td>
-                                  <td>{{$user->email}}</td>
-                                  <td>{{$user->roles[0]->display_name ?? 'No Role'}}</td>
+                                  <td>{{$adm->code}}</td>
+                                  <td>{{$adm->name}}</td>
                                   <td class="d-flex justify-content-center">
-                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#EditUser_{{$user->id}}">
+                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#Editadm_{{$adm->code}}">
                                         <i class="fe fe-edit-2 text-primary mr-4" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
                                     </a>
+                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#deleteadm_{{$adm->code}}">
                                     <i class="fe fe-trash-2 text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </a>
                                   </td>
+                                 
                               </tr>
-                              @include('users.edit')
+                              @include('hr.master.administrations.edit')
+                              @include('hr.master.administrations.delete')
                           @endforeach
                         </tbody>
                         </table>

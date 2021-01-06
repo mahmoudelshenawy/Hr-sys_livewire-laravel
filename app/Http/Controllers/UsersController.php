@@ -10,7 +10,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('id', 'desc')->latest()->paginate(100);
         return view('users.index', ['users' => $users]);
     }
 
@@ -25,7 +25,7 @@ class UsersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique',
+            'email' => 'required|email',
             'password' => 'required|min:6',
             'role' => 'required',
             'permissions' => 'required|min:1'
@@ -61,17 +61,31 @@ class UsersController extends Controller
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable|min:6',
+            'role' => 'required',
+            'permissions' => 'required|min:1'
+        ]);
+        $user = User::findOrFail($id);
+        $request_all = request()->except(['permissions', 'password', 'role']);
+        if (request()->has('password')) {
+            $request_all['password'] = bcrypt($request->password);
+        } else if (request()->has('role')) {
+            $user->detachRole($user->role);
+            $user->attachRole($request->role);
+        } else {
+            $request_all['password'] = $user->password;
+        }
+        $user->update($request_all);
+        $user->syncPermissions($request->permissions);
+
+        session()->flash('success', 'new user is added');
+
+        return redirect()->back();
     }
 
     /**

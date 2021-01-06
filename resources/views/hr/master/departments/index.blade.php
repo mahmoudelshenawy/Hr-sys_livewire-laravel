@@ -7,36 +7,36 @@
             <div class="card custom-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3">
-                        <h6 class="main-content-label mb-1">Manage Users</h6>
-                        <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEditUser">Add New User</a>
-                        @include('users.add')
+                        <h6 class="main-content-label mb-1">Manage Departments</h6>
+                        <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addDepart">Add New Department</a>
+                        @include('hr.master.departments.add')
                     </div>
                     <div class="table-responsive">
                         <table id="exportexample" class="table table-striped table-bordered text-nowrap" >
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>code</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                          @foreach ($users as $user)
+                          @foreach ($departments as $depart)
                               <tr>
-                                  <td>{{$user->id}}</td>
-                                  <td>{{$user->name}}</td>
-                                  <td>{{$user->email}}</td>
-                                  <td>{{$user->roles[0]->display_name ?? 'No Role'}}</td>
+                                  <td>{{$depart->code}}</td>
+                                  <td>{{$depart->name}}</td>
                                   <td class="d-flex justify-content-center">
-                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#EditUser_{{$user->id}}">
+                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#Editdepart_{{$depart->code}}">
                                         <i class="fe fe-edit-2 text-primary mr-4" data-toggle="tooltip" title="" data-placement="top" data-original-title="Edit"></i>
                                     </a>
+                                    <a class="modal-effect" data-effect="effect-scale" data-toggle="modal" href="#deletedepart_{{$depart->code}}">
                                     <i class="fe fe-trash-2 text-danger mr-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Delete"></i>
+                                    </a>
                                   </td>
+                                 
                               </tr>
-                              @include('users.edit')
+                              @include('hr.master.departments.edit')
+                              @include('hr.master.departments.delete')
                           @endforeach
                         </tbody>
                         </table>

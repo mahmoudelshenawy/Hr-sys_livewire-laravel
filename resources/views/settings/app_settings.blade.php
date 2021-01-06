@@ -9,7 +9,8 @@
         </div>
         <div class="card-body">
             <div class="col-10">
-                <form action="" method="post">
+                <form action="{{ route('app_settings.store') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                 <div class="form-group d-flex">
                 <p class="mg-b-10">Select default language</p>
                 <select class="form-control select2-no-search">
@@ -45,10 +46,6 @@
                     <option value="vert">vertical</option>
                 </select>
             </div>
-            <div class="form-group d-flex">
-                <p class="mg-b-10">Company Name</p>
-               <input type="text" class="form-control" name="company_name" placeholder="company name">
-            </div>
             @php
                 $list = timezone_identifiers_list();
             @endphp
@@ -61,14 +58,12 @@
                    @endforeach
                 </select>
             </div>
-            <div class="col-sm-12 col-md-6 mx-auto">
-                <p class="mg-b-10 text-center">choose your logo</p>
-                <input type="file" class="dropify" data-height="200" class="mx-auto"/>
-            </div>
             
             <input type="submit" value="Submit" class="btn ripple btn-success">
         </form>
             </div>
+            {{-- testing logo  --}}
+            <img src="{{ asset(appSetting()->logo) }}" alt="">
         </div>
     </div>
 </div>
