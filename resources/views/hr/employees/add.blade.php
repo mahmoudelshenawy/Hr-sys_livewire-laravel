@@ -1,25 +1,23 @@
-<div class="modal effect-scale fade"  id="Editadm_{{$adm->code}}">
+<div class="modal effect-scale fade"  id="addEmployee">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
-                <h6 class="modal-title">Edit Administration</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                <h6 class="modal-title">Add New Employee</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
             </div>
-            <form action="{{ hr('administrations/' . $adm->code) }}" method="post">
+            <form>
                 @csrf
-                @method('put')
             <div class="modal-body">
                <div class="row">
                  
                    <div class="col-sm-6">
                     <div class="form-group">
-                        <p class="mg-b-10">Name</p>
-                        <input type="text" class="form-control" name="name" placeholder=" administration name" value="{{$adm->name}}">
-                        @error('name')
+                        <p class="mg-b-10">job name</p>
+                        <input wire:model="test" type="text" class="form-control" placeholder=" job name">
+                        @error('test')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
                    </div>
-                  
                    @php
                    $list = App\Models\Branch::all(['name' , 'code']);
                @endphp
@@ -29,7 +27,7 @@
                     >
                        <option>Select a branch</option>
                       @foreach ($list as $item)
-                          <option value="{{$item->code}}" {{$adm->branch_id == $item->code ? 'selected' : ''}}>{{$item->name}}</option>
+                          <option value="{{$item->code}}">{{$item->name}}</option>
                       @endforeach
                    </select>
                    @error('country')

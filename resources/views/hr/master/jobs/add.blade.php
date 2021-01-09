@@ -1,4 +1,4 @@
-<div class="modal effect-scale"  id="addJob">
+<div class="modal effect-scale fade"  id="addJob">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">

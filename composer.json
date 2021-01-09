@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.1",
         "livewire/livewire": "^2.3",
+        "mediconesystems/livewire-datatables": "^0.4.3",
         "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {

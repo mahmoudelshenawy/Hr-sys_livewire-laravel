@@ -1,8 +1,8 @@
 <!-- Jquery js-->
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
-
 <!-- Bootstrap js-->
 <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
@@ -23,6 +23,7 @@
 <!-- Internal Form-elements js-->
 <script src="{{ asset('assets/js/advanced-form-elements.js') }}"></script>
 <script src="{{ asset('assets/js/select2.js') }}"></script>
+<script src="{{ asset('assets/js/form-elements.js') }}"></script>
 <!-- Internal Morris js -->
 <script src="{{ asset('assets/plugins/raphael/raphael.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/morris.js/morris.min.js') }}"></script>
@@ -61,7 +62,12 @@
 <!-- Dashboard js-->
 <script src="{{ asset('assets/js/index.js') }}"></script>
 {{-- Modal js --}}
-<script src="{{ asset('/assets/js/modal.js') }}"></script>
+<script src="{{ asset('assets/js/modal.js') }}"></script>
 
 <!-- Custom js-->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+{{-- select picker --}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+@stack('js')

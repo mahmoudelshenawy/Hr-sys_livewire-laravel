@@ -20,7 +20,7 @@
 		@include('layouts.partials.mobile_header')
 
 		@include('layouts.partials.horizontal_menu')
-
+		
 			<!-- Main Content-->
 			<div class="main-content pt-0">
 				<div class="container">
@@ -60,7 +60,7 @@
 
 		<!-- Back-to-top -->
 		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
-		
+		@livewireScripts
 		@include('layouts.partials.footer')
 
 	</body>

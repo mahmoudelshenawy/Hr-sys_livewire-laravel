@@ -1,4 +1,4 @@
-<div class="modal effect-scale"  id="addEditBranch">
+<div class="modal effect-scale fade"  id="addEditBranch">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">

@@ -14,3 +14,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('business_settings', App\Http\Controllers\MainOfficeSettingController::class);
 });
 Auth::routes();
+
+Route::get('/test', function () {
+    return view('home');
+});

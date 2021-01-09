@@ -56,6 +56,15 @@
                         </div>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link with-sub" href=""><i class="ti-wallet"></i>@lang('general.employees')</a>
+                    <ul class="nav-sub">
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/hr/employees">@lang('general.employees')</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

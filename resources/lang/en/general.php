@@ -11,5 +11,6 @@ return [
     'departments' => 'departments',
     'jobs' => 'jobs',
     'hr' => 'HR',
-    'master' => 'Master'
+    'master' => 'Master',
+    'employees' => 'Employees'
 ];

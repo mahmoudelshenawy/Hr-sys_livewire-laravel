@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(AppSettingsSeeder::class);
         $this->call(BusinessSetupSeeder::class);
+        $this->call(CountriesSeeder::class);
         \App\Models\Branch::factory(10)->create();
     }
 }

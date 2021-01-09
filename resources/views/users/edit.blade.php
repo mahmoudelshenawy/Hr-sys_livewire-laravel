@@ -1,4 +1,4 @@
-<div class="modal effect-scale"  id="EditUser_{{$user->id}}">
+<div class="modal effect-scale fade"  id="EditUser_{{$user->id}}">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">

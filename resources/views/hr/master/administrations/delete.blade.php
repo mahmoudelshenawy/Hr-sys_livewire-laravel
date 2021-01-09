@@ -1,4 +1,4 @@
-<div class="modal effect-slide-in-bottom" id="deleteadm_{{$adm->code}}">
+<div class="modal effect-slide-in-bottom fade" id="deleteadm_{{$adm->code}}">
     <div class="modal-dialog modal-dialog-centered modal-content-demo" role="document">
         <div class="modal-content tx-size-sm">
             <form action="{{hr('administrations/'. $adm->code)}}" method="post">
