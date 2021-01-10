@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Tables;
 
 use App\Models\Employee;
 use Mediconesystems\LivewireDatatables\Column;
@@ -28,9 +28,8 @@ class EmployeesTable extends LivewireDatatable
     public function remove($code)
     {
         Employee::where('code', '=', $code)->delete();
-        $this->hide = 'hide';
+
         $this->builder();
-        return redirect()->back();
     }
 
     public function RefreshTable()

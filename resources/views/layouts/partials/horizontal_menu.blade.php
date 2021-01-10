@@ -44,6 +44,22 @@
                                     <li class="nav-sub-item">
                                         <a class="nav-sub-link" href="{{hr('jobs')}}">{{ trans('general.jobs') }}</a>
                                     </li>
+                                    <li class="nav-sub-item">
+                                        <a class="nav-sub-link" href="{{hr('employment-status')}}">{{ trans('general.employment_status') }}</a>
+                                    </li>
+                                    <li class="nav-sub-item">
+                                        <a class="nav-sub-link" href="{{hr('skills')}}">{{ trans('general.skills') }}</a>
+                                    </li>
+                                    <li class="nav-sub-item">
+                                        <a class="nav-sub-link" href="{{hr('educations')}}">{{ trans('general.education') }}</a>
+                                    </li>
+                                    <li class="nav-sub-item">
+                                        <a class="nav-sub-link" href="{{hr('languages')}}">{{ trans('general.language') }}</a>
+                                    </li>
+                                    <li class="nav-sub-item">
+                                        <a class="nav-sub-link" href="{{hr('certifications')}}">{{ trans('general.certification') }}</a>
+                                    </li>
+                                  
                                 </ul>
                             
                             

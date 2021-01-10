@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Crud;
 
 use Livewire\Component;
 use App\Models\Employee;
@@ -64,6 +64,6 @@ class AddEmployee extends Component
     }
     public function render()
     {
-        return view('livewire.add-employee');
+        return view('livewire.crud.add-employee');
     }
 }

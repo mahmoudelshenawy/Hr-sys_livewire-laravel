@@ -139,8 +139,10 @@
             </div>
             <br>
             <div class="modal-footer">
-                <button class="btn ripple btn-primary"  type="submit" wire:click="$refresh()">Save</button>
-                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn ripple btn-primary btn-with-icon"  type="submit" wire:click="$refresh()">{{ trans('general.save_only') }} <i class="far fa-folder  ml-2"></i></button>
+                <button class="btn ripple btn-secondary btn-with-icon">{{ trans('general.save_continue') }} <i class="far fa-copy  ml-2 "></i></button>
+                <button class="btn ripple btn-success btn-with-icon">{{ trans('general.save_complete_other') }}<i class="fas fa-folder-plus ml-2 "></i></button>
+                <button class="btn ripple btn-light" data-dismiss="modal" type="button">Close</button>
             </div>
         </form>
         </div>

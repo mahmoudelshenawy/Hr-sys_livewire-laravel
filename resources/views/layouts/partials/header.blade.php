@@ -8,7 +8,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/img/brand/favicon.ico') }}" type="image/x-icon"/>
-
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans" />
     <!-- Title -->
     <title>ERP</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -57,7 +57,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 @livewireStyles
 <style>
-    
+    body{
+        font-family: 'Noto Sans'; 
+    }
      div.dataTables_wrapper div.dataTables_filter{
         float: right;
     }

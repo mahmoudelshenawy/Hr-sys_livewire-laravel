@@ -12,5 +12,14 @@ return [
     'jobs' => 'jobs',
     'hr' => 'HR',
     'master' => 'Master',
-    'employees' => 'Employees'
+    'employees' => 'Employees',
+    'save_only' => 'save only',
+    'save_continue' => 'save and continue',
+    'save_complete_other' => 'save and redirect',
+    'employment_status' => 'employment status',
+    'skills' => 'Skills',
+    'education' => 'education',
+    'language' => 'language',
+    'certification' => 'certification',
+    'save' => 'save'
 ];

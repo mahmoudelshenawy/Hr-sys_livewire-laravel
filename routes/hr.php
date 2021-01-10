@@ -9,10 +9,14 @@ Route::group(['prefix' => 'hr/master', 'middleware' => 'auth'], function () {
     Route::resource('administrations', App\Http\Controllers\HR\Master\AdministrationsController::class);
     Route::resource('departments', App\Http\Controllers\HR\Master\DepartmentsController::class);
     Route::resource('jobs', App\Http\Controllers\HR\Master\JobsController::class);
-
-    Route::get('employees', [App\Http\Controllers\HR\Master\JobsController::class, 'index']);
+    Route::get('employment-status', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfEmploymentStatus']);
+    Route::get('skills', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfSkills']);
+    Route::get('educations', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfEducations']);
+    Route::get('languages', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfLanguages']);
+    Route::get('certifications', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfCertifications']);
 });
 Route::group(['prefix' => 'hr', 'middleware' => 'auth'], function () {
 
     Route::get('employees', [App\Http\Controllers\HR\Employee\EmployeesController::class, 'index']);
+    Route::get('employees/{id}/profile', [App\Http\Controllers\HR\Employee\EmployeesController::class, 'getProfile']);
 });

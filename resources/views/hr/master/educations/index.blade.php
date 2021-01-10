@@ -11,13 +11,12 @@
         <div class="card custom-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between mb-3">
-                    <h6 class="main-content-label mb-1">Manage Employees</h6>
-                    <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEmployee" wire:click="$emit('clearEmployee')">Add New Employee</a>
-                    {{-- @include('hr.employees.add') --}}
+                    <h6 class="main-content-label mb-1">Manage Education</h6>
+                    <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addEducation" wire:click="">Add New Education </a>
                 </div>
                 <div class="">
-                    <livewire:tables.employees-table />
-                    <livewire:crud.add-employee />
+                    <livewire:tables.educations-table />
+                    <livewire:crud.add-educations />
                 </div>
             </div>
         </div>
