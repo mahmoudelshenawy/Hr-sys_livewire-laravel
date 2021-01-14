@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Department extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'code';
+    // protected $primaryKey = 'code';
     protected $guarded = [];
     public function branch()
     {

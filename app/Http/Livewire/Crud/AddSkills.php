@@ -21,7 +21,8 @@ class AddSkills extends Component
     ];
 
     protected $listeners = [
-        'findSkill' => 'findSkill'
+        'findSkill' => 'findSkill',
+        'clearance' => 'clearance'
     ];
 
     public function save()
@@ -38,6 +39,10 @@ class AddSkills extends Component
     {
         $skill = Skill::find($id);
         $this->skill = $skill;
+    }
+    public function clearance()
+    {
+        $this->skill = new Skill();
     }
     public function render()
     {

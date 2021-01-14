@@ -7,7 +7,7 @@ $(function() {
 	})
 	
 	// Input Masks
-	$('#dateMask').mask('99/99/9999');
+	$('#dateMask').mask('9999-99-99');
 	$('#phoneMask').mask('(999) 999-9999');
 	$('#phoneExtMask').mask('(999) 999-9999? ext 99999');
 	$('#ssnMask').mask('999-99-9999');
@@ -41,6 +41,7 @@ $(function() {
 		showOtherMonths: true,
 		selectOtherMonths: true
 	});
+	$('.datepicker').datepicker();
 	
 	// Datepicker no of months
 	$('#datepickerNoOfMonths').datepicker({

@@ -5,6 +5,9 @@ $(function() {
 		headerTag: 'h3',
 		bodyTag: 'section',
 		autoFocus: true,
+		transitionEffect: "fade",
+        enableAllSteps: true,
+        transitionEffectSpeed: 500,
 		titleTemplate: '<span class="number">#index#<\/span> <span class="title">#title#<\/span>'
 	});
 	

@@ -14,6 +14,10 @@ Route::group(['prefix' => 'hr/master', 'middleware' => 'auth'], function () {
     Route::get('educations', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfEducations']);
     Route::get('languages', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfLanguages']);
     Route::get('certifications', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfCertifications']);
+
+    Route::get('banks', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfBanks']);
+    Route::get('sponsors', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfSponsors']);
+    Route::get('insurrance_companies', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfInsurrance']);
 });
 Route::group(['prefix' => 'hr', 'middleware' => 'auth'], function () {
 

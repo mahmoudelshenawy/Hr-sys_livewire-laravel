@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Livewire\Layout\BanksPage;
 use Illuminate\Support\Facades\Route;
-
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -15,6 +15,8 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Auth::routes();
 
-Route::get('/test', function () {
-    return view('home');
-});
+// Route::get('/test', function () {
+//     return view('home');
+// });
+
+Route::get('/test', BanksPage::class);

@@ -14,7 +14,8 @@ class CreateAdministrationsTable extends Migration
     public function up()
     {
         Schema::create('administrations', function (Blueprint $table) {
-            $table->bigIncrements('code');
+            $table->id();
+            $table->bigInteger('code')->nullable();
             $table->string('name');
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->timestamps();

@@ -39,6 +39,7 @@ class LanguagesTable extends LivewireDatatable
     public function columns()
     {
         return [
+            Column::checkbox(),
             NumberColumn::name('id')->filterable(),
 
             Column::name('name')->filterable()->searchable(),

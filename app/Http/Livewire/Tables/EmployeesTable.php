@@ -14,9 +14,9 @@ class EmployeesTable extends LivewireDatatable
     public $exportable = true;
     public Employee $employee;
     public $hide = 'show';
+    public $hideable = "select";
     protected $listeners = [
         'EmployeeAdded' => 'RefreshTable',
-        'EmployeeUpdated' => 'refresh'
     ];
 
 
@@ -36,23 +36,30 @@ class EmployeesTable extends LivewireDatatable
     {
         $this->builder();
     }
-    public function refresh($employee)
+
+    public function delete($code)
     {
-        $this->builder($employee = $employee);
+        Employee::where('code', '=', $code)->delete();
+
+        $this->builder();
     }
     public function columns()
     {
         return [
+            Column::checkbox('code'),
+            NumberColumn::name('profile')->view('hr.employees.btn.image'),
             NumberColumn::name('code')->filterable(),
-
             Column::name('name')->filterable()->searchable(),
-
             Column::name('email')->truncate()->filterable()->searchable(),
-            Column::name('religion')->filterable(),
+            Column::name('address')->filterable()->searchable(),
+            Column::name('marital_status'),
+            Column::name('military_service'),
+            Column::name('phone'),
             DateColumn::name('created_at')->filterable(),
             Column::callback(['code', 'name'], function ($code, $name) {
                 return view('hr.employees.btn.table-actions', ['code' => $code, 'name' => $name, 'hide' => $this->hide]);
-            })
+            }),
+            Column::delete('code')->alignRight()
         ];
     }
 }

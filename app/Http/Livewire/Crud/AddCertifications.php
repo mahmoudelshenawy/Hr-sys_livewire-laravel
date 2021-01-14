@@ -21,7 +21,8 @@ class AddCertifications extends Component
     ];
 
     protected $listeners = [
-        'findCertification' => 'findCertification'
+        'findCertification' => 'findCertification',
+        'clearance' => 'clearance'
     ];
 
     public function save()
@@ -38,6 +39,10 @@ class AddCertifications extends Component
     {
         $certification = Certification::find($id);
         $this->certification = $certification;
+    }
+    public function clearance()
+    {
+        $this->certification = new Certification();
     }
     public function render()
     {

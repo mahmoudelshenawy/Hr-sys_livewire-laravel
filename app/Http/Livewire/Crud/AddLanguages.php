@@ -21,7 +21,8 @@ class AddLanguages extends Component
     ];
 
     protected $listeners = [
-        'findLanguage' => 'findLanguage'
+        'findLanguage' => 'findLanguage',
+        'clearance' => 'clearance'
     ];
 
     public function save()
@@ -38,6 +39,10 @@ class AddLanguages extends Component
     {
         $language = Language::find($id);
         $this->language = $language;
+    }
+    public function clearance()
+    {
+        $this->language = new Language();
     }
     public function render()
     {

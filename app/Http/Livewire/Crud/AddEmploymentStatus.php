@@ -21,7 +21,8 @@ class AddEmploymentStatus extends Component
     ];
 
     protected $listeners = [
-        'findEmpStatus' => 'findEmpStatus'
+        'findEmpStatus' => 'findEmpStatus',
+        'clearance' => 'clearance'
     ];
 
     public function save()
@@ -38,6 +39,10 @@ class AddEmploymentStatus extends Component
     {
         $status = EmploymentStatus::find($id);
         $this->status = $status;
+    }
+    public function clearance()
+    {
+        $this->status = new EmploymentStatus();
     }
     public function render()
     {

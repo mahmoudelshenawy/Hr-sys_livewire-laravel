@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'code';
+    // protected $primaryKey = 'code';
     protected $guarded = [];
 }

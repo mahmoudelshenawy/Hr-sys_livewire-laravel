@@ -15,13 +15,14 @@ class AddEmployee extends Component
     public $profile;
     protected $listeners = [
         'findEmployee' => 'findEmployee',
-        'clearEmployee' => 'clearEmployee'
+        'clearance' => 'clearance'
     ];
     function mount()
     {
         $this->employee = new Employee();
     }
     protected $rules = [
+        'employee.code' => 'required|string',
         'employee.name' => 'required|string',
         'employee.en_name' => 'nullable|string',
         'employee.short_name' => 'nullable|string',
@@ -30,26 +31,27 @@ class AddEmployee extends Component
         'employee.alt_phone' => 'nullable|string',
         'employee.address' => 'nullable|string',
         'employee.religion' => 'nullable|string',
-        'employee.country_id' => 'nullable|numeric',
-        'employee.birth_date' => 'nullable|string',
-        'employee.passport_number' => 'nullable|numeric',
-        'employee.id_number' => 'nullable|numeric',
-        'employee.profile' => 'nullabel|image',
-        'profile' => 'image',
+        'employee.gender' => 'nullable|string',
+        'employee.birth_date' => 'nullable|date',
+        'employee.marital_status' => 'nullable',
+        'employee.military_service' => 'nullable',
+        'employee.profile' => 'nullable|image',
+        'profile' => 'nullable|image',
     ];
 
     public function save()
     {
-
         $this->validate();
         if ($this->profile !== null) {
             $filename = $this->profile->store('/public/employees');
+            if ($this->employee->profile !== null) {
+                Storage::delete($this->employee->profile);
+            }
             $this->employee->profile = $filename;
         }
-
         $this->employee->save();
         $this->employee = new Employee();
-        $this->emit('EmployeeAdded', $this->employee);
+        $this->emit('EmployeeAdded');
     }
 
     public function findEmployee($code)
@@ -58,7 +60,8 @@ class AddEmployee extends Component
         $this->employee = $employee;
         $this->toUpdate = true;
     }
-    public function ClearEmployee()
+
+    public function clearance()
     {
         $this->employee = new Employee();
     }

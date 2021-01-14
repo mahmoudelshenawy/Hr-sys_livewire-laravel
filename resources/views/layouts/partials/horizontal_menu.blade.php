@@ -61,8 +61,20 @@
                                     </li>
                                   
                                 </ul>
-                            
-                            
+                            </div>
+                            <div>
+                                <ul class="nav">
+                                    <li><span>{{ trans('general.master') }}</span></li>
+                                        <li class="nav-sub-item">
+                                            <a class="nav-sub-link" href="{{hr('banks')}}" data-turbolinks="true">{{ trans('general.banks') }}</a>
+                                        </li>
+                                        <li class="nav-sub-item">
+                                            <a class="nav-sub-link" href="{{hr('sponsors')}}" data-turbolinks="true">{{ trans('general.sponsor') }}</a>
+                                        </li>
+                                        <li class="nav-sub-item">
+                                            <a class="nav-sub-link" href="{{hr('insurrance_companies')}}" data-turbolinks="true">{{ trans('general.insurrance_companies') }}</a>
+                                        </li>
+                                </ul>
                             </div>
                             <div>
                                 

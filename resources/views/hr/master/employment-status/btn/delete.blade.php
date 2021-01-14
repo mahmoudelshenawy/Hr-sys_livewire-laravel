@@ -1,7 +1,7 @@
-<div class="modal effect-slide-in-bottom fade" id="deleteEmploymentStatus">
+<div class="modal effect-slide-in-bottom fade" id="deleteEmploymentStatus_{{$id}}">
     <div class="modal-dialog modal-dialog-centered modal-content-demo" role="document">
         <div class="modal-content tx-size-sm">
-            <form wire:submit.prevent="remove({{ $id }})" id="deleteStatusForm" onsubmit="test()">
+            <form wire:submit.prevent="remove({{ $id }})" id="deleteStatusForm_{{$id}}" onsubmit="test()">
             <div class="modal-body tx-center pd-y-20 pd-x-20">
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button> <i class="fa fa-warning tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
                 <span class="iconify" data-icon="la:trash-alt-solid" data-inline="false"></span>
@@ -12,15 +12,16 @@
         </div>
     </div>
 </div>
-{{-- <br> --}}
+
 @push('js')
 <script>
     function test(){
-        $('#deleteEmploymentStatus').modal('hide');
+        $('#deleteEmploymentStatus_'+{{$id}}).modal('hide');
     }
     $(document).ready(function(){
-        $('#deleteStatusForm').on('submit' , function(){
-               $('#deleteEmploymentStatus').modal('hide');
+        $('#deleteStatusForm_' + {{$id}}).on('submit' , function(){
+            console.log('hola')
+               $('#deleteEmploymentStatus_' + {{$id}}).modal('hide');
            })
     })
 </script>

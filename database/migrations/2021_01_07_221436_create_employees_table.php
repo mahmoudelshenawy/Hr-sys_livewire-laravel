@@ -14,21 +14,22 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->bigIncrements('code');
+            $table->bigInteger('code')->unsigned();
+            $table->primary('code');
             $table->string('profile', 255)->nullable();
             $table->string('name', 255);
             $table->string('en_name', 255)->nullable();
             $table->string('short_name', 255)->nullable();
+            $table->enum('gender', ['male', 'female'])->nullable();
             $table->char('email', 50)->nullable();
             $table->char('phone', 20)->nullable();
             $table->char('alt_phone', 20)->nullable();
             $table->char('address', 100)->nullable();
             $table->char('religion', 10)->nullable();
-            $table->unsignedInteger('country_id')->nullable();
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
-            $table->char('birth_date', 15)->nullable();
-            $table->char('passport_number', 25)->nullable();
-            $table->char('id_number', 25)->nullable();
+            $table->date('birth_date', 15)->nullable();
+            $table->string('birth_place', 15)->nullable();
+            $table->enum('marital_status', ['single', 'married', 'divorced'])->nullable();
+            $table->enum('military_service', ['passed', 'exempt', 'unclear'])->nullable();
             $table->timestamps();
         });
     }

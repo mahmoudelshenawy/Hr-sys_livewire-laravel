@@ -10,10 +10,11 @@
     <div class="col-lg-12">
         <div class="card custom-card">
             <div class="card-body">
-                <div class="d-flex justify-content-between mb-3">
-                    <h6 class="main-content-label mb-1">Manage Skills</h6>
-                    <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addSkill" wire:click="">Add New Skill </a>
-                </div>
+                @livewire('widgets.add-modal', [
+                    'title' => "Manage Skills",
+                    'name'   => "Add New Skill" ,
+                    'sectedKey'  => 'addSkill'
+                ])   
                 <div class="">
                     <livewire:tables.skills-table />
                     <livewire:crud.add-skills />

@@ -21,7 +21,8 @@ class AddEducations extends Component
     ];
 
     protected $listeners = [
-        'findEducation' => 'findEducation'
+        'findEducation' => 'findEducation',
+        'clearance' => 'clearance'
     ];
 
     public function save()
@@ -38,6 +39,10 @@ class AddEducations extends Component
     {
         $education = Education::find($id);
         $this->education = $education;
+    }
+    public function clearance()
+    {
+        $this->education = new Education();
     }
     public function render()
     {

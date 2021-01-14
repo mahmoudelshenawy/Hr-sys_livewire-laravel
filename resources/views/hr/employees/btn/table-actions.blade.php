@@ -6,27 +6,11 @@
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
     </a>
 
-    <a data-toggle="modal" href="#deleteEmployee" class="p-1 text-red-600 hover:bg-red-600 hover:text-white rounded">
+    {{-- <a data-toggle="modal" href="#deleteEmployee" class="p-1 text-red-600 hover:bg-red-600 hover:text-white rounded">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-    </a>
+    </a> --}}
 
-    @include('hr.employees.btn.delete')
+    {{-- @include('hr.employees.btn.delete') --}}
 </div>
-
-{{-- modal delete --}}
-
- {{-- <div class="modal effect-slide-in-bottom fade" id="deleteEmployee_{{$code}}"  wire:ignore>
-    <div class="modal-dialog modal-dialog-centered modal-content-demo" role="document" data-container="#deleteEmployee_{{$code}}">
-        <div class="modal-content tx-size-sm">
-            <form wire:submit.prevent="remove({{ $code }})" id="formDelete_{{ $code }}">
-            <div class="modal-body tx-center pd-y-20 pd-x-20">
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button> <i class="fa fa-warning tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
-                <span class="iconify" data-icon="la:trash-alt-solid" data-inline="false"></span>
-                <h4 class="tx-danger mg-b-20">Are you sure to delete this?</h4>
-                <button class="btn ripple btn-danger pd-x-25" type="submit">Continue</button>
-            </form>
-            </div>
-        </div>
-    </div> --}}
 
  

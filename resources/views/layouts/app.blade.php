@@ -2,6 +2,8 @@
 <html lang="{{lang()}}">
 	
 @include('layouts.partials.header')
+
+
 	<body class="horizontalmenu">
 
 		
@@ -36,9 +38,16 @@
 						</div>
 					
 					</div>
+					@if(Session::has('success'))
+					<script>toastr.success('Success')</script> 
+					@endif
+					@if(session()->get('errors'))
+                    <script>  toastr.error("{{ session()->get('errors')->first() }}")</script>
+                 @endif
 					<!-- End Page Header -->
-
 				@yield('content')
+				</div>
+			</div>
 			<!-- End Main Content-->
 
 		@include('layouts.partials.sidebar_todo')
@@ -60,8 +69,7 @@
 
 		<!-- Back-to-top -->
 		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
-		@livewireScripts
+		
 		@include('layouts.partials.footer')
-
 	</body>
 </html>

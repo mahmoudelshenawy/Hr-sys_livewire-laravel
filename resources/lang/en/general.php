@@ -21,5 +21,8 @@ return [
     'education' => 'education',
     'language' => 'language',
     'certification' => 'certification',
-    'save' => 'save'
+    'save' => 'save',
+    'banks' => 'Banks',
+    'sponsor' => 'Sponsor',
+    'insurrance_companies' => 'insurrance companies',
 ];

@@ -1,4 +1,5 @@
 <!-- Jquery js-->
+
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap js-->
 <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
@@ -9,10 +10,13 @@
 <!-- Peity js-->
 <script src="{{ asset('assets/plugins/peity/jquery.peity.min.js') }}"></script>
 
+{{-- datepicker Cdn --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
 
 <!-- Jquery-Ui js-->
 <script src="{{ asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script>
-
+<!-- Internal Jquery.maskedinput js-->
+<script src="{{ asset('assets/plugins/jquery.maskedinput/jquery.maskedinput.js') }}"></script>
 <!-- Select2 js-->
 <script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>
 
@@ -64,10 +68,25 @@
 {{-- Modal js --}}
 <script src="{{ asset('assets/js/modal.js') }}"></script>
 
+<!-- Internal Jquery-steps js-->
+<script src="{{ asset('assets/plugins/jquery-steps/jquery.steps.min.js') }}"></script>
+
+<!-- Internal Accordion-Wizard-Form js-->
+<script src="{{ asset('assets/plugins/accordion-Wizard-Form/jquery.accordion-wizard.min.js') }}"></script>
+
+<!-- Internal Form-wizard js-->
+<script src="{{ asset('assets/js/form-wizard-rtl.js') }}"></script>
+
 <!-- Custom js-->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
+{{-- toastr --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 {{-- select picker --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+{{-- pikaday --}}
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
 
 @stack('js')

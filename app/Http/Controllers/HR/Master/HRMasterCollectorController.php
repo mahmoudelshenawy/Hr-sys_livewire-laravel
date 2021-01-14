@@ -28,4 +28,16 @@ class HRMasterCollectorController extends Controller
     {
         return view('hr.master.certifications.index');
     }
+    public function indexOfBanks()
+    {
+        return view('hr.master.banks.index');
+    }
+    public function indexOfSponsors()
+    {
+        return view('hr.master.sponsors.index');
+    }
+    public function indexOfInsurrance()
+    {
+        return view('hr.master.insurrance_companies.index');
+    }
 }

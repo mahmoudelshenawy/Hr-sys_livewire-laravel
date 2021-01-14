@@ -15,6 +15,6 @@ class EmployeesController extends Controller
     public function getProfile($code)
     {
         $employee = Employee::find($code);
-        return view('hr.employees.profile.index');
+        return view('hr.employees.profile.index', compact('employee'));
     }
 }

@@ -10,10 +10,11 @@
     <div class="col-lg-12">
         <div class="card custom-card">
             <div class="card-body">
-                <div class="d-flex justify-content-between mb-3">
-                    <h6 class="main-content-label mb-1">Manage Languages</h6>
-                    <a class="modal-effect btn ripple btn-success" data-effect="effect-scale" data-toggle="modal" href="#addLanguage" wire:click="">Add New Language </a>
-                </div>
+                @livewire('widgets.add-modal', [
+                    'title' => "Manage Languages",
+                    'name'   => "Add New Language" ,
+                    'sectedKey'  => 'addLanguage'
+                ])   
                 <div class="">
                     <livewire:tables.languages-table />
                     <livewire:crud.add-languages />
