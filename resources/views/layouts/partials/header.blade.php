@@ -11,9 +11,14 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans" />
     <!-- Title -->
     <title>ERP</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+   
+     {{-- tailwind css --}}
+ <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!-- Bootstrap css-->
     <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
+
+    <!-- Datetimepicker CSS -->
+      <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.min.css')}}">    
     <!-- Icons css-->
     <link href="{{ asset('assets/plugins/web-fonts/icons.css') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/plugins/web-fonts/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
@@ -24,7 +29,11 @@
 		<link href="{{ asset('assets/plugins/datatable/responsivebootstrap4.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css') }}" rel="stylesheet" />
 
-       
+        	<!-- Calendar CSS -->
+            <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar.min.css') }}">
+
+   
+            
     @if (lang() == 'ar')
          <!-- Style css-->
     <link href="{{ asset('assets/css-rtl/style.css') }}" rel="stylesheet">
@@ -58,11 +67,7 @@
 
 {{-- Alpine JS --}}
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-@livewireStyles
-@livewireScripts
-<script src="{{ asset('js/app.js') }}"></script>
-{{-- <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script> --}}
-
+@toastr_css
 <style>
     body{
         font-family: 'Noto Sans'; 
@@ -120,11 +125,12 @@ margin-bottom: 20px
 } 
 .datepicker{ z-index:99999 !important;}
 </style>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" integrity="sha512-rxThY3LYIfYsVCWPCW9dB0k+e3RZB39f23ylUYTEuZMDrN/vRqLdaCBo/FbvVT6uC2r0ObfPzotsfKF9Qc5W5g==" crossorigin="anonymous" /> --}}
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-
-@stack('css')
+@livewireStyles
+@livewireScripts
+{{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+{{-- <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script> --}}
+ @stack('css')
 </head>

@@ -16,8 +16,10 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.1",
         "livewire/livewire": "^2.3",
+        "maatwebsite/excel": "^3.1",
         "mediconesystems/livewire-datatables": "^0.4.3",
-        "santigarcor/laratrust": "^6.3"
+        "santigarcor/laratrust": "^6.3",
+        "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

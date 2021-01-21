@@ -6,10 +6,8 @@
             <div class="card-body">
                 <div class="panel profile-cover">
                     <div class="profile-cover__img">
-                        @php
-                         $trancated = explode('/' , $employee->profile);
-                        @endphp
-                 <img src="{{ asset('storage/' . $trancated[1] .'/'. $trancated[2]) }}" alt="" width="100" height="100" class="image-fluid img-fluid rounded-circle">
+                       
+                 <img src="{{ $employee->profile ?? asset('img/default.jpg') }}" alt="" width="100" height="100" class="image-fluid img-fluid rounded-circle">
                         <h3 class="h3">{{$employee->name}}</h3>
                     </div>
                     <div class="profile-cover__action bg-img">
@@ -35,7 +33,7 @@
                         <a class="nav-link  active" data-toggle="tab" href="#about">Basic Information</a>
                         <a class="nav-link" data-toggle="tab" href="#Identification">Identifications</a>
                         <a class="nav-link" data-toggle="tab" href="#ContractInfo">Contract Info</a>
-                        <a class="nav-link" data-toggle="tab" href="#gallery">Gallery</a>
+                        <a class="nav-link" data-toggle="tab" href="#AddFinancial">Financial Data</a>
                         <a class="nav-link" data-toggle="tab" href="#friends">Friends</a>
                         <a class="nav-link" data-toggle="tab" href="#settings">Account Settings</a>
                     </nav>
@@ -150,12 +148,9 @@
                 </div>
                 @livewire('profile.add-identification', ['employee' => $employee], key($employee->code))
                 @livewire('profile.add-contract', ['employee' => $employee], key($employee->code))
+                @livewire('profile.add-financial', ['employee' => $employee], key($employee->code))
                
-                <div class="main-content-body p-4 border tab-pane border-top-0" id="gallery">
-                    <div class="card-body border">
-                       
-                    </div>
-                </div>
+               
                 <div class="main-content-body tab-pane border-top-0" id="friends">
                     <div class="card-body border pd-b-10">
                         <!-- row -->

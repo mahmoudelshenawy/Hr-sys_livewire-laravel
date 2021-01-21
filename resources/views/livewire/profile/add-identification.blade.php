@@ -1,26 +1,37 @@
-<div class="main-content-body tab-pane p-4 border-top-0" id="Identification" wire:ignore>
+<div class="main-content-body tab-pane p-4 border-top-0" id="Identification">
     <div class="card-body border" data-container="#Identification">
         <div class="mb-4 main-content-label">Identification Information</div>
-        <form class="form-horizontal" wire:submit.prevent="save">
+        <form class="form-horizontal needs-validation" wire:submit.prevent="save">
             <div class="mb-4 main-content-label">complete ID data</div>
-            <div class="form-group ">
+            <div class="form-group has-danger">
                 <div class="row row-sm">
+                   
                     <div class="col-md-3">
                         <label class="form-label">passport Number</label>
                     </div>
-                    <div class="col-md-9" id="passport_number" wire:ignore>
-                        <input data-container="#passport_number" type="text" wire:model="identify.passport_number" class="form-control" placeholder="passport number">
+                    <div class="col-md-9" id="passport_number">
+                        <input type="text" wire:model="identify.passport_number" class="form-control @error('identify.passport_number') is-invalid @enderror" placeholder="passport number">
                     </div>
+                    <span id="passport_number">
+                    @error('identify.passport_number')
+                       <small data-container="#passport_number" class="text-danger">{{$message}}</small>
+                    
+                    @enderror
+                </span>
                 </div>
             </div>
+            
             <div class="form-group ">
                 <div class="row row-sm">
                     <div class="col-md-3">
                         <label class="form-label">passport release date</label>
                     </div>
-                    <div class="col-md-9" id="passport_release_date" wire:ignore>
+                    <div class="col-md-9" id="passport_release_date">
                         <input data-container="#passport_release_date" type="text" wire:model="identify.passport_release_date" class="form-control" placeholder="passport release date">
                     </div>
+                    @error('identify.passport_release_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -31,6 +42,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.passport_expire_date" class="form-control" placeholder="passport expire date">
                     </div>
+                    @error('identify.passport_expire_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -41,6 +55,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.id_number" class="form-control" placeholder="ID number">
                     </div>
+                    @error('identify.id_number')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -51,6 +68,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.id_release_date" class="form-control" placeholder="ID release date">
                     </div>
+                    @error('identify.id_release_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -61,6 +81,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.id_expire_date" class="form-control" placeholder="ID expire date">
                     </div>
+                    @error('identify.id_expire_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -71,6 +94,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.residency_number" class="form-control" placeholder="residency number">
                     </div>
+                    @error('identify.residency_number')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -81,6 +107,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.residency_release_date" class="form-control" placeholder="residency release date">
                     </div>
+                    @error('identify.residency_release_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -91,6 +120,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.residency_expire_date" class="form-control" placeholder="residency expire date">
                     </div>
+                    @error('identify.residency_expire_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -101,6 +133,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.deriving_license_number" class="form-control" placeholder="driving license number">
                     </div>
+                    @error('identify.deriving_license_number')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -111,6 +146,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.license_release_date" class="form-control" placeholder="driving license release date">
                     </div>
+                    @error('identify.license_release_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -121,6 +159,9 @@
                     <div class="col-md-9">
                         <input type="text" wire:model="identify.license_expire_date"  class="form-control" placeholder="driving license expire date">
                     </div>
+                    @error('identify.license_expire_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -131,6 +172,9 @@
                     <div class="col-md-9">
                         <input type="text"  wire:model="identify.health_certification_number" class="form-control" placeholder="Health certification number">
                     </div>
+                    @error('identify.health_certification_number')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -141,6 +185,9 @@
                     <div class="col-md-9">
                         <input type="text"  wire:model="identify.health_certification_release_date" class="form-control" placeholder="Health certification release date">
                     </div>
+                    @error('identify.health_certification_release_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -151,6 +198,9 @@
                     <div class="col-md-9">
                         <input type="text"  wire:model="identify.health_certification_expire_date" class="form-control" placeholder="Health certification expire date">
                     </div>
+                    @error('identify.health_certification_expire_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             <div class="form-group ">
@@ -161,6 +211,9 @@
                     <div class="col-md-9">
                         <input type="text"  wire:model="identify.health_certification_cancel_date" class="form-control" placeholder="Health certification cancel date">
                     </div>
+                    @error('identify.health_certification_cancel_date')
+                    <span class="text-danger">{{$message}}</span>
+                   @enderror
                 </div>
             </div>
             {{-- select country --}}
@@ -181,7 +234,7 @@
                                   @endforeach
                                </select>
                         </div>
-                        @error('country')
+                        @error('identify.country_id')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                     </div>

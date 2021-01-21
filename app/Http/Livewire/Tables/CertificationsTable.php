@@ -12,7 +12,6 @@ class CertificationsTable extends LivewireDatatable
 {
     // public $model = Employee::class;
     public $exportable = true;
-    public Certification $certification;
     public $hide = 'show';
 
     protected $listeners = [

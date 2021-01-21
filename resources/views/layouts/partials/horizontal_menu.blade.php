@@ -1,6 +1,6 @@
 	<!-- Horizonatal menu-->
     <div class="main-navbar hor-menu sticky">
-        <div class="container">
+        <div class="container-lg">
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/"><i class="ti-home"></i>Dashboard</a>
@@ -74,10 +74,18 @@
                                         <li class="nav-sub-item">
                                             <a class="nav-sub-link" href="{{hr('insurrance_companies')}}" data-turbolinks="true">{{ trans('general.insurrance_companies') }}</a>
                                         </li>
+                                        <li class="nav-sub-item">
+                                            <a class="nav-sub-link" href="{{hr('shifts')}}" data-turbolinks="true">{{ trans('general.shifts') }}</a>
+                                        </li>
                                 </ul>
                             </div>
                             <div>
-                                
+                                <ul class="nav">
+                                    <li><span>{{ trans('general.reports') }}</span></li>
+                                        <li class="nav-sub-item">
+                                            <a class="nav-sub-link" href="{{url('hr/reports/employees_reports')}}" data-turbolinks="true">{{ trans('general.employees_reports') }}</a>
+                                        </li>
+                                </ul> 
                             
                             </div>
                             
@@ -90,6 +98,32 @@
                     <ul class="nav-sub">
                         <li class="nav-sub-item">
                             <a class="nav-sub-link" href="/hr/employees">@lang('general.employees')</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/hr/employees/companions">@lang('general.companions')</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link with-sub" href=""><i class="ti-wallet"></i>@lang('general.payroll')</a>
+                    <ul class="nav-sub">
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/payroll/overtime">@lang('general.payroll_overtime')</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/payroll/allowance">@lang('general.payroll_allowance')</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/payroll/advance">@lang('general.payroll_advance')</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/payroll/commission">@lang('general.commission')</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/payroll/delay_penalty">@lang('general.payroll_delay_penalty')</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link" href="/payroll/absence_penalty">@lang('general.payroll_absence_penalty')</a>
                         </li>
                     </ul>
                 </li>

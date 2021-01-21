@@ -10,7 +10,6 @@ use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 
 class InsurranceCompaniesTable extends LivewireDatatable
 {
-    // public $model = Employee::class;
     public $exportable = true;
     public $hide = 'show';
 
@@ -27,14 +26,12 @@ class InsurranceCompaniesTable extends LivewireDatatable
     {
         $this->builder();
     }
-
-    public function remove($id)
+    public function delete($id)
     {
         InsurranceCompany::where('id', '=', $id)->delete();
 
         $this->builder();
     }
-
     public function columns()
     {
         return [
@@ -43,9 +40,10 @@ class InsurranceCompaniesTable extends LivewireDatatable
             Column::name('name')->filterable()->searchable(),
             Column::name('Address'),
             DateColumn::name('created_at')->filterable(),
-            Column::callback(['id', 'name'], function ($id, $name) {
-                return view('hr.master.insurrance_companies.btn.table-actions', ['id' => $id, 'name' => $name]);
-            })
+            Column::callback(['id'], function ($id) {
+                return view('components.edit-table-btn', ['key' => $id, 'name' => 'Company', 'for' => 'addInsurranceCompany']);
+            }),
+            Column::delete('id')->alignRight()
         ];
     }
 }

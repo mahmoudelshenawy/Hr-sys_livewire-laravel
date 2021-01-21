@@ -12,7 +12,6 @@ class LanguagesTable extends LivewireDatatable
 {
     // public $model = Employee::class;
     public $exportable = true;
-    public Language $language;
     public $hide = 'show';
 
     protected $listeners = [

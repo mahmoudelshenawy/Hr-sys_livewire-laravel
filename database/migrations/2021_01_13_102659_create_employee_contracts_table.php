@@ -21,7 +21,7 @@ class CreateEmployeeContractsTable extends Migration
             $table->unsignedBigInteger('administration_id');
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('job_id');
-            $table->unsignedBigInteger('supervisor_id')->nullable();
+            $table->unsignedBigInteger('supervisor_code')->nullable();
             $table->date('date_of_hiring')->nullable();
             $table->date('start_of_contract')->nullable();
             $table->date('end_of_contract')->nullable();

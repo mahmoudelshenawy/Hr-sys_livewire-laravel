@@ -1,0 +1,1 @@
+<img src="{{ $value ?? asset('img/default.jpg') }}" alt="" width="50" height="50" class="image-fluid img-fluid rounded-circle">

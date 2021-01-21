@@ -1,4 +1,4 @@
-<div class="modal effect-scale fade"  id="addCertification" wire:ignore>
+<div class="modal effect-scale fade"  id="addCertification" wire:ignore.self>
     <div class="modal-dialog modal-dialog-centered modal-md" role="document"  data-container="#addCertification">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
@@ -9,22 +9,10 @@
             <div class="modal-body">
                <div class="row">
                    <div class="col-sm-6">
-                    <div class="form-group">
-                        <p class="mg-b-10">Certification name</p>
-                        <div id="for-name" wire:ignore>
-                        <input data-container="#for-name" wire:model.lazy="certification.name" type="text" class="form-control"  placeholder="certification name">
-                    </div>
-                    @error('certification.name') <span class="error text-danger">{{ $message }}</span> @enderror
-                    </div>
+                    <x-form-group title="Certification name" for="name" name="certification.name" />
                    </div>
                    <div class="col-sm-6">
-                    <div class="form-group">
-                        <p class="mg-b-10">certification description</p>
-                        <div  id="for-enname" wire:ignore>
-                        <input data-container="#for-enname" wire:model.lazy="certification.description" type="text" class="form-control"  placeholder="certification english name">
-                    </div>
-                    @error('certification.description') <span class="error text-danger">{{ $message }}</span> @enderror
-                    </div>
+                    <x-form-group title="certification description" for="enname" name="certification.description" />
                    </div>
             </div>
             <br>

@@ -17,6 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->bigInteger('code')->unsigned();
             $table->primary('code');
             $table->string('profile', 255)->nullable();
+            $table->string('profile_path', 255)->nullable();
             $table->string('name', 255);
             $table->string('en_name', 255)->nullable();
             $table->string('short_name', 255)->nullable();

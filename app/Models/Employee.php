@@ -19,4 +19,29 @@ class Employee extends Model
         // $path = "storage/" . $trancated[1] . '/' . $trancated[2];
         return $trancated;
     }
+
+    public function contract()
+    {
+        return $this->hasOne(EmployeeContract::class);
+    }
+    public function archive()
+    {
+        return $this->hasOne(EmployeeArchive::class);
+    }
+    public function education()
+    {
+        return $this->hasOne(EmployeeEducation::class);
+    }
+    public function skill()
+    {
+        return $this->hasOne(EmployeeSkill::class);
+    }
+    public function identification()
+    {
+        return $this->hasOne(EmployeeIdentification::class);
+    }
+    public function financial()
+    {
+        return $this->hasOne(EmployeeFinancial::class);
+    }
 }

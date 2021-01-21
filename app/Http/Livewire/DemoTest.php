@@ -3,35 +3,47 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\User;
-use Livewire\WithPagination;
+use App\Models\Branch;
+use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class DemoTest extends Component
 {
-    use WithPagination;
-    protected $paginationTheme = 'bootstrap';
-    public $testInput;
-    public $browser;
-    public $country;
-    public $shot;
-    public $testFile;
 
-    public function updateBrowser($value)
+    use WithFileUploads;
+
+    public $photo;
+    public $url;
+    public $location;
+    protected $rules = [
+        'photo' => 'required|file'
+    ];
+
+    public function mount()
     {
-        dd($value);
+        $this->location = 'public/testing/aL0B4kgdY2Es0394H5L8UIThJYpWNIn6oXf7lybm.jpg';
+        $this->url =  Storage::url('public/testing/aL0B4kgdY2Es0394H5L8UIThJYpWNIn6oXf7lybm.jpg');
     }
-    public function updatedCountry($value)
+    public function remove()
     {
-        dd($value);
+        Storage::delete($this->location);
+
+        $this->url = '';
     }
-    public function updatedShot($value)
+    public function publish()
     {
-        dd($value);
+        $this->validate();
+
+        if ($this->photo !== null) {
+            $filename = $this->photo->store('/public/testing');
+            dd($filename);
+        }
+
+
+        return 'has that done';
     }
     public function render()
     {
-        return view('livewire.demo-test', [
-            'users' => User::paginate(10)
-        ]);
+        return view('livewire.demo-test');
     }
 }

@@ -1,13 +1,9 @@
-<div class="modal effect-scale fade"  id="addEmployee" wire:ignore>
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document"  data-container="#addEmployee">
+ <div  class="modal effect-scale fade" id="addEmployee" wire:ignore.self>  
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document" data-container="#addEmployee">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
                     <h6 class="modal-title">Add New Employee</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
             </div>
-            @if(session()->get('errors'))
-            <div class="alert alert-danger">{{session()->get('errors')->first()}}</div>
-                @endif
-
             <form wire:submit.prevent="save"  id="formAdd">
                 {{-- Start of modal body --}}
             <div class="modal-body">
@@ -15,150 +11,138 @@
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">code</p>
-                        <div id="for-code" wire:ignore>
+                        <div id="for-code" >
                         <input data-container="#for-code" wire:model.lazy="employee.code" type="text" class="form-control"  placeholder="employee code">
                     </div>
-                    @error('employee.code') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.code"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">employee name</p>
-                        <div id="for-name" wire:ignore>
+                        <div id="for-name" >
                         <input data-container="#for-name" wire:model.lazy="employee.name" type="text" class="form-control"  placeholder="employee name">
                     </div>
-                    @error('employee.name') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.name"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">employee english name</p>
-                        <div  id="for-enname" wire:ignore>
+                        <div  id="for-enname" >
                         <input data-container="#for-enname" wire:model.lazy="employee.en_name" type="text" class="form-control"  placeholder="employee english name">
                     </div>
-                    @error('employee.en_name') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.en_name"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">employee short name</p>
-                        <div  id="for-shortname" wire:ignore>
+                        <div  id="for-shortname" >
                         <input data-container="#for-shortname" wire:model.lazy="employee.short_name" type="text" class="form-control"  placeholder="employee name">
                     </div>
-                    @error('employee.short_name') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.short_name"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">Email</p>
-                        <div  id="for-email" wire:ignore>
+                        <div  id="for-email" >
                         <input data-container="#for-email" wire:model.lazy="employee.email" type="text" class="form-control"  placeholder="email">
                     </div>
-                    @error('employee.email') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.email"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <p class="mg-b-10 mr-2">gender</p>
-                    <div  id="for-gender" wire:ignore>
-                    <select data-container="#for-gender" class="form-control selectpicker" wire:model="employee.gender"
-                     >
+                    <div id="for-gender" wire:ignore>
+                    <select wire:model="employee.gender" data-container="#for-gender" class="form-control selectpicker" 
+                    >
                         <option>gender</option>
                            <option value="male">male</option>
                            <option value="female">female</option>
                     </select>
                     </div>
-                    @error('gender')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
+                    <x-error name="employee.gender"/>
                 </div>
                    <div class="col-sm-4">
                     <p class="mg-b-10 mr-2">marital status</p>
                     <div  id="for-marital_status" wire:ignore>
-                    <select data-container="#for-marital_status" class="form-control selectpicker" wire:model="employee.marital_status"
-                     >
+                    <select wire:model="employee.marital_status" data-container="#for-marital_status" class="form-control selectpicker" >
                         <option>marital status</option>
                            <option value="single">single</option>
                            <option value="married">married</option>
                            <option value="divorced">divorced</option>
                     </select>
                     </div>
-                    @error('employee.marital_status')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
+                    <x-error name="employee.marital_status"/>
                 </div>
                    <div class="col-sm-4">
                     <p class="mg-b-10 mr-2">military service</p>
-                    <div  id="for-military_service" wire:ignore>
-                    <select data-container="#for-military_service" class="form-control selectpicker" wire:model="employee.military_service"
-                     >
+                    <div id="for-military_service" wire:ignore>
+                    <select data-container="#for-military_service" class="form-control selectpicker" wire:model="employee.military_service" >
                         <option>military service</option>
                            <option value="passed">passed</option>
                            <option value="exempt">exempt</option>
                            <option value="unclear">unclear</option>
                     </select>
                     </div>
-                    @error('employee.military_service')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
+                    <x-error name="employee.military_service"/>
                 </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">contact number</p>
-                        <div  id="for-phone" wire:ignore>
+                        <div  id="for-phone" >
                         <input data-container="#for-phone" wire:model.lazy="employee.phone" type="text" class="form-control"  placeholder="contact number">
                     </div>
-                    @error('employee.phone') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.phone"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">alternative number</p>
-                        <div  id="for-altphone" wire:ignore>
+                        <div  id="for-altphone" >
                         <input data-container="#for-altphone" wire:model.lazy="employee.alt_phone" type="text" class="form-control"  placeholder="alternative number">
                     </div>
-                    @error('employee.alt_phone') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.alt_phone"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">Adressr</p>
-                        <div  id="for-address" wire:ignore>
+                        <div  id="for-address" >
                         <input data-container="#for-address" wire:model.lazy="employee.address" type="text" class="form-control"  placeholder="address">
                     </div>
-                    @error('employee.address') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.address"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     <div class="form-group">
                         <p class="mg-b-10">Religion</p>
-                        <div  id="for-religion" wire:ignore>
+                        <div  id="for-religion" >
                         <input data-container="#for-religion" wire:model.lazy="employee.religion" type="text" class="form-control"  placeholder="religion">
                     </div>
-                    @error('employee.religion') <span class="error text-danger">{{ $message }}</span> @enderror
+                    <x-error name="employee.religion"/>
                     </div>
                    </div>
                    <div class="col-sm-4">
                     {{-- fc-datepicker --}}
                     <div class="form-group">
                         <p class="mg-b-10">birth_date</p>
-                        <div  id="for-birth_date" wire:ignore>
-                            <div data-container="#for-birth_date">
-                         <input data-container="#for-birth_date" id="dateMask" data-mask="0000-00-00" wire:model="employee.birth_date" class="form-control" type="text">
-                        </div>
                         
-                    </div>
-                    @error('employee.birth_date') <span class="error text-danger">{{ $message }}</span> @enderror
+                            <div id="for-birth_date" wire:ignore>
+                         <input data-container="#for-birth_date" id="datetimepicker" wire:model="employee.birth_date" class="form-control date" type="text">
+                        </div>
+                        <x-error name="employee.birth_date"/>
                     </div>
                    </div>
                <br>
                <div class="col-sm-12 col-md-4 mx-auto">
                 <p class="mg-b-10 mr-4 text-center">choose your logo</p>
                  <div id="for-profile-id" wire:ignore>
-                <input data-container="#for-profile-id" type="file" wire:model="profile" class="dropify" data-height="200"/>
+                <input data-container="#for-profile-id" type="file" wire:model="profile" class="dropify" data-height="200" />
             </div>
-                @error('profile')
-                <span class="text-danger">{{$message}}</span>
-            @enderror
+            <x-error name="profile"/>
             </div>
             </div>
             </div>
@@ -174,7 +158,6 @@
         </div>
     </div>
 </div>
-</div>
 @push('js')
 <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
 <script>
@@ -186,7 +169,6 @@
 </script>
 @endpush
 @push('css')
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 <style>
     .wizard > .actions{
         display: none !important;
@@ -213,5 +195,8 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
     .datepicker{ z-index:99999 !important;}
+    .scale{
+        overflow-y: scroll;
+    }
 </style>
 @endpush

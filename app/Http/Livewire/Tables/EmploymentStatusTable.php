@@ -12,7 +12,6 @@ class EmploymentStatusTable extends LivewireDatatable
 {
     // public $model = Employee::class;
     public $exportable = true;
-    public EmploymentStatus $status;
     public $hide = 'show';
 
     protected $listeners = [

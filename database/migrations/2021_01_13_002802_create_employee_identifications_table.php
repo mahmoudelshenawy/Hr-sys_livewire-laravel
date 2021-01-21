@@ -19,7 +19,7 @@ class CreateEmployeeIdentificationsTable extends Migration
             // $table->foreign('employee_code')->references('code')->on('employees')->onDelete('cascade');
             $table->char('passport_number', 25)->nullable();
             $table->date('passport_release_date')->nullable();
-            $table->date('passport_expire_date')->nullable()->default(date("d/m/y"));
+            $table->date('passport_expire_date')->nullable();
             $table->char('id_number', 25)->nullable();
             $table->date('id_release_date')->nullable();
             $table->date('id_expire_date')->nullable();
@@ -35,6 +35,7 @@ class CreateEmployeeIdentificationsTable extends Migration
             $table->date('health_certification_release_date')->nullable();
             $table->date('health_certification_expire_date')->nullable();
             $table->date('health_certification_cancel_date')->nullable();
+            $table->string('nationality')->nullable();
             $table->unsignedBigInteger('country_id')->nullable();
             // $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->unsignedBigInteger('sponsor_id')->nullable();

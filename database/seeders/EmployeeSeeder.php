@@ -6,16 +6,12 @@ use Illuminate\Database\Seeder;
 
 class EmployeeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
         \App\Models\Employee::create([
             'code' => 122,
-            'profile' => 'public/employees/YHkwnXDR6QcBSoGqBV2OLIKialqXkHHqDe0N3ftO.jpg',
+            'profile' => 'storage/employees/images/122/ga9PIsGXYTJzNkK4mGBzNvcEmG9SGBJyuYLBttyC.jpg',
             'name' => 'Mahmoud',
             'gender' => 'male',
             'email' => 'admin@gmail.com',

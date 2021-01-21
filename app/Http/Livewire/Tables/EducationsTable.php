@@ -12,7 +12,6 @@ class EducationsTable extends LivewireDatatable
 {
     // public $model = Employee::class;
     public $exportable = true;
-    public Education $Education;
     public $hide = 'show';
 
     protected $listeners = [

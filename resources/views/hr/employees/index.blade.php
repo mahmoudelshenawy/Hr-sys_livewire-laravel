@@ -6,12 +6,8 @@
 
 @section('content')
  <!-- Row -->
- <div class="row row-sm">
+ <div class="row row-sm" x-data="{ open: $wire.showModal}">
     <div class="col-lg-12">
-        @if(session()->get('errors'))
-    {{-- toastr.error("{{ session()->get('errors')->first() }}"); --}}
-    <div class="alert alert-danger">{{session()->get('errors')->first()}}</div>
-        @endif
         <div class="card custom-card">
             <div class="card-body">
                 @livewire('widgets.add-modal', [
@@ -19,10 +15,11 @@
                     'name'   => "Add New Employee" ,
                     'sectedKey'  => 'addEmployee'
                 ])  
-                <div class="">
-                    <livewire:tables.employees-table />
-                    <livewire:crud.add-employee />
-                </div>
+               
+                    <livewire:tables.employees-table />   
+                    <livewire:crud.add-employee/>
+              
+              
             </div>
         </div>
     </div>
@@ -31,3 +28,25 @@
    
 @endsection
 
+@push('css')
+    <style>
+        .handmade{
+  position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    padding-right: 16px;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: opacity 0.15s linear;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+        }
+    </style>
+@endpush

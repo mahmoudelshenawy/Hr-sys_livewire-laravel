@@ -28,7 +28,7 @@ class BanksTable extends LivewireDatatable
         $this->builder();
     }
 
-    public function remove($id)
+    public function delete($id)
     {
         Bank::where('id', '=', $id)->delete();
 
@@ -44,9 +44,10 @@ class BanksTable extends LivewireDatatable
             Column::name('name')->filterable()->searchable(),
             Column::name('Address'),
             DateColumn::name('created_at')->filterable(),
-            Column::callback(['id', 'name'], function ($id, $name) {
-                return view('hr.master.banks.btn.table-actions', ['id' => $id, 'name' => $name]);
-            })
+            Column::callback(['id'], function ($id) {
+                return view('components.edit-table-btn', ['key' => $id, 'name' => 'Bank', 'for' => 'addBank']);
+            }),
+            Column::delete('id')->alignRight()
         ];
     }
 }

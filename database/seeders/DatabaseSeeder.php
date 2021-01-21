@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AppSettingsSeeder::class);
         $this->call(BusinessSetupSeeder::class);
         $this->call(CountriesSeeder::class);
-        $this->call(EmployeeSeeder::class);
+        // $this->call(EmployeeSeeder::class);
         \App\Models\Branch::factory(10)->create();
         \App\Models\Administration::factory(10)->create();
         \App\Models\Department::factory(10)->create();

@@ -10,7 +10,6 @@ use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 
 class SponsorsTable extends LivewireDatatable
 {
-    // public $model = Employee::class;
     public $exportable = true;
     public $hide = 'show';
 
@@ -28,7 +27,7 @@ class SponsorsTable extends LivewireDatatable
         $this->builder();
     }
 
-    public function remove($id)
+    public function delete($id)
     {
         Sponsor::where('id', '=', $id)->delete();
 
@@ -40,14 +39,14 @@ class SponsorsTable extends LivewireDatatable
         return [
             Column::checkbox(),
             NumberColumn::name('id')->filterable(),
-
             Column::name('name')->filterable()->searchable(),
             Column::name('address'),
             Column::name('type'),
             DateColumn::name('created_at')->filterable(),
-            Column::callback(['id', 'name'], function ($id, $name) {
-                return view('hr.master.Sponsors.btn.table-actions', ['id' => $id, 'name' => $name]);
-            })
+            Column::callback(['id'], function ($id) {
+                return view('components.edit-table-btn', ['key' => $id, 'name' => 'Sponsor', 'for' => 'addSponsor']);
+            }),
+            Column::delete('id')->alignRight()
         ];
     }
 }

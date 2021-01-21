@@ -9,12 +9,21 @@ class AddIdentification extends Component
 {
 
     public $employee;
-    public $identify;
+    public  $identify;
 
+    public function mount()
+    {
+        $identify = EmployeeIdentification::where('employee_code', '=', $this->employee->code)->first();
+        if ($identify == null) {
+            $this->identify = new EmployeeIdentification();
+        } else {
+            $this->identify = $identify;
+        }
+    }
     protected $rules = [
-        'identify.passport_number' => 'nullable',
-        'identify.passport_release_date' => 'nullable',
-        'identify.passport_expire_date' => 'nullable',
+        'identify.passport_number' => 'required',
+        'identify.passport_release_date' => 'required',
+        'identify.passport_expire_date' => 'required',
         'identify.id_number' => 'nullable',
         'identify.id_release_date' => 'nullable',
         'identify.id_expire_date' => 'nullable',
@@ -32,20 +41,9 @@ class AddIdentification extends Component
         'identify.sponsor_id' => 'nullable',
     ];
 
-
-
-    public function mount()
+    public function updated($propertyName)
     {
-        $identify = EmployeeIdentification::where('employee_code', '=', $this->employee->code)->first();
-        if ($identify == null) {
-            $this->identify = new EmployeeIdentification();
-        } else {
-            $this->identify = $identify;
-        }
-    }
-
-    public function toaster()
-    {
+        $this->validateOnly($propertyName);
     }
     public function save()
     {

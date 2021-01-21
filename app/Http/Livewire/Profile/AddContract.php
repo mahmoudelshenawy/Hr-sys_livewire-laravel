@@ -18,15 +18,15 @@ class AddContract extends Component
         'contract.administration_id' => 'required',
         'contract.department_id' => 'required',
         'contract.job_id' => 'required',
-        'contract.supervisor_id' => 'nullable',
+        'contract.supervisor_code' => 'nullable',
         'contract.attendable' => 'nullable|boolean',
         'contract.has_annual_vacation' => 'nullable|boolean',
         'contract.has_terminal_bonus' => 'nullable|boolean',
         'contract.date_of_hiring' => 'nullable',
         'contract.start_of_contract' => 'nullable',
         'contract.end_of_contract' => 'nullable',
-        'contract.days_of_annual_vacation' => 'nullable',
-        'contract.days_of_terminal_bonus' => 'nullable',
+        'contract.days_of_annual_vacation' => 'nullable|numeric',
+        'contract.days_of_terminal_bonus' => 'nullable|numeric',
     ];
     public function mount()
     {
@@ -58,18 +58,18 @@ class AddContract extends Component
     public function updatedHasTerminalBonus()
     {
         $this->hasTerminalBonus != $this->hasTerminalBonus;
-        $this->contract->has_terminal_bonus = $this->hasTerminalBonus;
     }
     public function updatedHasAnnualVacation()
     {
         $this->hasAnnualVacation != $this->hasAnnualVacation;
-        $this->contract->has_annual_vacation = $this->hasAnnualVacation;
     }
 
     public function save()
     {
         $this->validate();
         $this->contract->employee_code = $this->employee->code;
+        $this->contract->has_annual_vacation = $this->hasAnnualVacation;
+        $this->contract->has_terminal_bonus = $this->hasTerminalBonus;
         $this->contract->save();
         session()->flash('message', 'documnet has saved');
     }

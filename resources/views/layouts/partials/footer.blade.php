@@ -1,24 +1,32 @@
 <!-- Jquery js-->
 
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+
+<!-- Moment Js-->
+<script src="{{asset('assets/js/moment.min.js')}}"></script>
 <!-- Bootstrap js-->
 <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Datetimepicker JS -->
+<script src="{{asset('assets/js/bootstrap-datetimepicker.min.js')}}"></script>
+{{-- <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
 
 
 <!-- Peity js-->
 <script src="{{ asset('assets/plugins/peity/jquery.peity.min.js') }}"></script>
 
-{{-- datepicker Cdn --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
-
 <!-- Jquery-Ui js-->
-<script src="{{ asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script>
+{{-- <script src="{{ asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script> --}}
 <!-- Internal Jquery.maskedinput js-->
-<script src="{{ asset('assets/plugins/jquery.maskedinput/jquery.maskedinput.js') }}"></script>
+{{-- <script src="{{ asset('assets/plugins/jquery.maskedinput/jquery.maskedinput.js') }}"></script> --}}
 <!-- Select2 js-->
 <script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+
+
+<!-- Calendar JS -->
+<script src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
+<script src="{{asset('assets/js/fullcalendar.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.fullcalendar.js')}}"></script>
 
 <!--MutipleSelect js-->
 <script src="{{ asset('assets/plugins/multipleselect/multiple-select.js') }}"></script>
@@ -80,13 +88,24 @@
 <!-- Custom js-->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
-{{-- toastr --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
 {{-- select picker --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
 {{-- pikaday --}}
 <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+ {{-- toastr --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/datetime-moment.js"></script>
+
 
 @stack('js')
+
+<script>
+    $(document).ready(function(){
+        $('#datetimepicker').datetimepicker({
+            //  format: 'DD/MM/YYYY',
+             format: 'YYYY-MM-DD',
+             locale: 'en'
+         });
+    })
+</script>

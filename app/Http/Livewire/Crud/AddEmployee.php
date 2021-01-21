@@ -13,9 +13,11 @@ class AddEmployee extends Component
     public $employee;
     public $toUpdate = false;
     public $profile;
+    public $showModal = false;
+
     protected $listeners = [
-        'findEmployee' => 'findEmployee',
-        'clearance' => 'clearance'
+        'clearance' => 'clearance',
+        'findValue' => 'findValue',
     ];
     function mount()
     {
@@ -31,10 +33,10 @@ class AddEmployee extends Component
         'employee.alt_phone' => 'nullable|string',
         'employee.address' => 'nullable|string',
         'employee.religion' => 'nullable|string',
-        'employee.gender' => 'nullable|string',
+        'employee.gender' => 'required|string',
         'employee.birth_date' => 'nullable|date',
-        'employee.marital_status' => 'nullable',
-        'employee.military_service' => 'nullable',
+        'employee.marital_status' => 'required',
+        'employee.military_service' => 'required',
         'employee.profile' => 'nullable|image',
         'profile' => 'nullable|image',
     ];
@@ -43,27 +45,37 @@ class AddEmployee extends Component
     {
         $this->validate();
         if ($this->profile !== null) {
-            $filename = $this->profile->store('/public/employees');
+            $filename = $this->profile->store('/public/employees/images/' . $this->employee->code);
+            $url = Storage::url($filename);
             if ($this->employee->profile !== null) {
-                Storage::delete($this->employee->profile);
+                Storage::delete($this->employee->profile_path);
             }
-            $this->employee->profile = $filename;
+            $this->employee->profile = $url;
+            $this->employee->profile_path = $filename;
         }
         $this->employee->save();
         $this->employee = new Employee();
         $this->emit('EmployeeAdded');
     }
 
-    public function findEmployee($code)
+    public function findValue($code)
     {
         $employee = Employee::find($code);
         $this->employee = $employee;
-        $this->toUpdate = true;
     }
 
     public function clearance()
     {
         $this->employee = new Employee();
+    }
+
+    public function changeModal()
+    {
+        $this->showModal = true;
+    }
+    public function hideModal()
+    {
+        $this->showModal = false;
     }
     public function render()
     {

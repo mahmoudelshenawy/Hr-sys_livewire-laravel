@@ -43,7 +43,7 @@
 					@endif
 					@if(session()->get('errors'))
                     <script>  toastr.error("{{ session()->get('errors')->first() }}")</script>
-                 @endif
+				 @endif
 					<!-- End Page Header -->
 				@yield('content')
 				</div>
@@ -71,5 +71,8 @@
 		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
 		
 		@include('layouts.partials.footer')
+		@toastr_js
+		@toastr_render
 	</body>
+   
 </html>

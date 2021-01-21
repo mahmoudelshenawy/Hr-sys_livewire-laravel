@@ -118,14 +118,14 @@
                             <label class="form-label">Select Supervisor</label>
                         </div>
                         <div class="col-md-9">
-                            <select wire:model="contract.supervisor_id" class="form-control selectpicker "  data-live-search="true">
+                            <select wire:model="contract.supervisor_code" class="form-control selectpicker "  data-live-search="true">
                                    <option>Select Supervisor</option>
                                   @foreach ($employees as $employee)
                                       <option value="{{$employee->code}}">{{$employee->name}}</option>
                                   @endforeach
                                </select>
                         </div>
-                        @error('contract.supervisor_id')
+                        @error('contract.supervisor_code')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                     </div>
@@ -207,7 +207,7 @@
                             <label class="form-label">number of days of annual vacation</label>
                         </div>
                             <div class="col-md-9" id="days_of_annual_vacation" wire:ignore>
-                                <input data-container="#days_of_annual_vacation" type="text" wire:model="contract.days_of_annual_vacation" class="form-control" placeholder="number of days of annual vacation">
+                                <input data-container="#days_of_annual_vacation" type="number" wire:model="contract.days_of_annual_vacation" class="form-control" placeholder="number of days of annual vacation">
                             </div>  
                     </div>
                 </div><!-- days of annual vacation-->
@@ -230,7 +230,7 @@
                         <label class="form-label">number of days of terminal bonus</label>
                     </div>
                         <div class="col-md-9" id="days_of_terminal_bonus" wire:ignore>
-                            <input data-container="#days_of_terminal_bonus" type="text" wire:model="contract.days_of_terminal_bonus" class="form-control" placeholder="number of days of terminal bonus">
+                            <input data-container="#days_of_terminal_bonus" type="numeric" wire:model="contract.days_of_terminal_bonus" class="form-control" placeholder="number of days of terminal bonus">
                         </div>  
                 </div>
             </div><!-- days of terminal bonus-->
