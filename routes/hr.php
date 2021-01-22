@@ -14,7 +14,6 @@ Route::group(['prefix' => 'hr/master', 'middleware' => 'auth'], function () {
     Route::get('educations', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfEducations']);
     Route::get('languages', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfLanguages']);
     Route::get('certifications', [App\Http\Controllers\HR\Master\HRMasterCollectorController::class, 'indexOfCertifications']);
-
     Route::get('banks', App\Http\Livewire\Pages\Banks::class);
     Route::get('sponsors', App\Http\Livewire\Pages\Sponsors::class);
     Route::get('insurrance_companies', App\Http\Livewire\Pages\InsurranceCompanies::class);

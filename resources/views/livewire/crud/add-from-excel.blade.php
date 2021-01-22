@@ -11,18 +11,11 @@
                         @php
                         $months = config('enums.months');
                        @endphp
-                       <div class="form-group" wire:ignore>
-                        <select wire:model="month" id="" class="selectpicker form-control" data-live-search="true">
-                            @foreach ($months as $index=>$month)
-                            <option value="{{$index + 1}}">{{$month}}</option>
-                            @endforeach
-                           </select>
-                       </div>
-                        <x-select-group title="Month" name="month" for="month" searchable>
-                            @foreach ($months as $index=>$month)
-                            <option value="{{$index + 1}}">{{$month}}</option>
-                            @endforeach
-                        </x-select-group>
+                       <x-select-group title="Month" name="month" for="month2" searchable>
+                        @foreach ($months as $index=>$month)
+                        <option value="{{$index + 1}}">{{$month}}</option>
+                        @endforeach
+                    </x-select-group>
                     </div><!-- month-->
                     <div class="col-md-6 mx-auto">
                          <div id="for-file" wire:ignore>
