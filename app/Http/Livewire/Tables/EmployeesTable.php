@@ -17,8 +17,6 @@ class EmployeesTable extends LivewireDatatable
     protected $listeners = [
         'EmployeeAdded' => 'RefreshTable',
     ];
-
-
     public function builder()
     {
         return Employee::query();
@@ -36,6 +34,7 @@ class EmployeesTable extends LivewireDatatable
 
         $this->builder();
     }
+
     public function columns()
     {
         return [

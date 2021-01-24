@@ -6,7 +6,7 @@
 
 @section('content')
  <!-- Row -->
- <div class="row row-sm" x-data="{ open: $wire.showModal}">
+ <div class="row row-sm">
     <div class="col-lg-12">
         <div class="card custom-card">
             <div class="card-body">
