@@ -77,11 +77,7 @@
             <div class="dropdown main-header-notification flag-dropdown">
                 <a class="nav-link icon country-Flag d-flex">
                     <span class="avatar mx-auto align-self-center bg-transparent">
-                        @if (lang() == 'ar')
-                        <img src="{{ asset('assets/img/flags/eg.svg') }}" alt="img" class="" height="23" width="30"> 
-                        @else
                         <img src="{{ asset('assets/img/flags/us_flag.jpg') }}" alt="img" class="" height="23" width="30">
-                        @endif
                     </span>
                 </a>
                 <div class="dropdown-menu">

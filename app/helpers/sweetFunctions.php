@@ -1,33 +1,33 @@
 <?php
 
-function AppSetting()
-{
-    return \App\Models\AppSetting::orderBy('id', 'desc')->first();
-}
+// function AppSetting()
+// {
+//     return \App\Models\AppSetting::orderBy('id', 'desc')->first();
+// }
 
-function BusinessSetup()
-{
-    return \App\Models\MainOfficeSettings::orderBy('id', 'desc')->first();
-}
+// function BusinessSetup()
+// {
+//     return \App\Models\MainOfficeSettings::orderBy('id', 'desc')->first();
+// }
 
-function lang()
-{
-    return AppSetting()->lang;
-}
+// function lang()
+// {
+//     return AppSetting()->lang;
+// }
 
-function direction()
-{
-    if (AppSetting()->lang == 'ar') {
-        return 'rtl';
-    } else {
-        return 'ltr';
-    }
-}
+// function direction()
+// {
+//     if (AppSetting()->lang == 'ar') {
+//         return 'rtl';
+//     } else {
+//         return 'ltr';
+//     }
+// }
 
-function hr($url)
-{
-    return url('hr/master/' . $url);
-}
+// function hr($url)
+// {
+//     return url('hr/master/' . $url);
+// }
 
 function country_list()
 {

@@ -32,27 +32,16 @@
         	<!-- Calendar CSS -->
             <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar.min.css') }}">
 
+       <!-- Style css-->
+       <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+       <link href="{{ asset('assets/css/skins.css') }}" rel="stylesheet">
+       <link href="{{ asset('assets/css/dark-style.css') }}" rel="stylesheet">
+       <link href="{{ asset('assets/css/colors/default.css') }}" rel="stylesheet">
    
+       <!-- Color css-->
+       <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/colors/color.css') }}"> 
             
-    @if (lang() == 'ar')
-         <!-- Style css-->
-    <link href="{{ asset('assets/css-rtl/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css-rtl/skins.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css-rtl/dark-style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css-rtl/colors/default.css') }}" rel="stylesheet">
-
-    <!-- Color css-->
-    <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css-rtl/colors/color.css') }}">
-    @else
-        <!-- Style css-->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/skins.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/dark-style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/colors/default.css') }}" rel="stylesheet">
-
-    <!-- Color css-->
-    <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/colors/color.css') }}"> 
-    @endif
+    
 
     <!---Select2 css-->
     <link href="{{ asset('assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">

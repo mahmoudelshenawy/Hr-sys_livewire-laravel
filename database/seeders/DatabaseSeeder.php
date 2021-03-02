@@ -15,14 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(LaratrustSeeder::class);
         $this->call(UserTableSeeder::class);
-        $this->call(AppSettingsSeeder::class);
-        $this->call(BusinessSetupSeeder::class);
-        $this->call(CountriesSeeder::class);
-        $this->call(EmployeeSeeder::class);
-        \App\Models\Branch::factory(10)->create();
-        \App\Models\Administration::factory(10)->create();
-        \App\Models\Department::factory(10)->create();
-        \App\Models\Job::factory(10)->create();
-        \App\Models\EmploymentStatus::factory(10)->create();
+        $this->call(CategoriesSeeder::class);
+        $this->call(TagsSeeder::class);
+        \App\Models\Product::factory(2)->create();
     }
 }

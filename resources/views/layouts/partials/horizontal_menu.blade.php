@@ -5,15 +5,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/"><i class="ti-home"></i>Dashboard</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link with-sub" href=""><i class="ti-wallet"></i>@lang('general.users')</a>
                     <ul class="nav-sub">
                         <li class="nav-sub-item">
                             <a class="nav-sub-link" href="/users">@lang('general.manage_users')</a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link with-sub" href=""><i class="ti-wallet"></i>@lang('general.app_settings')</a>
                     <ul class="nav-sub">
                         <li class="nav-sub-item">
@@ -22,10 +22,10 @@
                             <a class="nav-sub-link" href="{{ url('/business_settings' . '/' . BusinessSetup()->id . '/edit') }}">@lang('general.manage_business_settings')</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 
                 
-                <li class="nav-item nav-item-mega">
+                {{-- <li class="nav-item nav-item-mega">
                     <a class="nav-link with-sub" href=""><i class="ti-package"></i>{{ trans('general.hr') }}</a>
                     <div class="nav-sub nav-sub-mega">
                         <div class="container">
@@ -91,9 +91,9 @@
                             
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link with-sub" href=""><i class="ti-wallet"></i>@lang('general.employees')</a>
                     <ul class="nav-sub">
                         <li class="nav-sub-item">
@@ -103,8 +103,8 @@
                             <a class="nav-sub-link" href="/hr/employees/companions">@lang('general.companions')</a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link with-sub" href=""><i class="ti-wallet"></i>@lang('general.payroll')</a>
                     <ul class="nav-sub">
                         <li class="nav-sub-item">
@@ -126,7 +126,7 @@
                             <a class="nav-sub-link" href="/payroll/absence_penalty">@lang('general.payroll_absence_penalty')</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

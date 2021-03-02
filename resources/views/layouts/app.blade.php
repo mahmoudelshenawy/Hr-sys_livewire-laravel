@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{lang()}}">
+<html lang="">
 	
 @include('layouts.partials.header')
 
@@ -71,8 +71,6 @@
 		<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
 		
 		@include('layouts.partials.footer')
-		@toastr_js
-		@toastr_render
 	</body>
    
 </html>
