@@ -188,10 +188,3 @@
 </div>
 </div>
 <!-- End Row -->
-
-{{-- 
-<br>
-<br>
-<img src="{{ $url }}" alt="" width="100" height="200"> --}}
-{{-- testing/WDrVcTnCkeoZPTwIK6HoaOwSN8TaLB7SjOV7KcvN.jpg --}}
-
